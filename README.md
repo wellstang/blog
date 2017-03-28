@@ -1,5 +1,5 @@
-# wellstang's blog
-> 关注 Node.js、ES6、React、Redux、Webpack、性能优化、HTTPS/HTTP2 等
+# wells's blog
+> 关注 Node.js、ES6、React、Webpack、性能优化、HTTPS/HTTP2 等
 
 #### | Javascript
 * [文章](https://github.com/wellstang/blog/issues)
