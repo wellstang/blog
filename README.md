@@ -16,7 +16,7 @@
 #### | web安全
 
 #### | 工具
-* [git命令大全](https://github.com/wellstang/blog/issues)
+* [git常用命令](https://github.com/wellstang/blog/issues/5)
 
 
 ``` javascript
