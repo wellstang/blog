@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tab Copilot 使用指南</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .poster {
+    max-width: 900px;
+    width: 100%;
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    overflow: hidden;
+  }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+    padding: 48px 48px 36px;
+    color: #fff;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+  }
+  .header .subtitle {
+    font-size: 18px;
+    font-weight: 400;
+    opacity: 0.85;
+  }
+
+  /* Step section */
+  .section {
+    padding: 36px 48px;
+  }
+  .section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a73e8;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title .num {
+    background: #1a73e8;
+    color: #fff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  /* Features grid */
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .feature {
+    background: #f8f9fa;
+    border-radius: 14px;
+    padding: 20px;
+    border: 1px solid #e8eaed;
+  }
+  .feature .icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+  }
+  .feature .name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #202124;
+    margin-bottom: 4px;
+  }
+  .feature .desc {
+    font-size: 14px;
+    color: #5f6368;
+    line-height: 1.5;
+  }
+
+  /* Steps */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #e8eaed;
+  }
+  .step .step-num {
+    background: #34a853;
+    color: #fff;
+    min-width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .step .step-content {
+    flex: 1;
+  }
+  .step .step-title {
+    font-weight: 600;
+    color: #202124;
+    margin-bottom: 2px;
+  }
+  .step .step-desc {
+    font-size: 14px;
+    color: #5f6368;
+    line-height: 1.5;
+  }
+  .step .step-desc code {
+    background: #e8eaed;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #202124;
+  }
+
+  /* Tips */
+  .tips {
+    background: #e8f0fe;
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin-top: 20px;
+  }
+  .tips .tip-title {
+    font-weight: 600;
+    color: #1a73e8;
+    margin-bottom: 8px;
+  }
+  .tips ul {
+    list-style: none;
+    padding: 0;
+  }
+  .tips ul li {
+    padding: 4px 0;
+    font-size: 14px;
+    color: #3c4043;
+    line-height: 1.5;
+  }
+  .tips ul li::before {
+    content: "💡 ";
+  }
+
+  .footer {
+    text-align: center;
+    padding: 24px;
+    color: #9aa0a6;
+    font-size: 13px;
+    border-top: 1px solid #e8eaed;
+  }
+
+  @media (max-width: 640px) {
+    .header { padding: 32px 24px; }
+    .header h1 { font-size: 28px; }
+    .section { padding: 24px; }
+    .features { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="poster">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>Tab Copilot</h1>
+    <div class="subtitle">标签管理与快速切换 · 一秒找到你需要的标签</div>
+  </div>
+
+  <!-- Features -->
+  <div class="section">
+    <div class="section-title">
+      <span class="num">1</span>
+      功能介绍
+    </div>
+    <div class="features">
+      <div class="feature">
+        <div class="icon">📋</div>
+        <div class="name">全部标签一览</div>
+        <div class="desc">同时查看所有打开的标签页，包含图标、标题和域名</div>
+      </div>
+      <div class="feature">
+        <div class="icon">🔍</div>
+        <div class="name">实时搜索</div>
+        <div class="desc">输入关键词即时过滤，按标题或 URL 搜索，无需鼠标</div>
+      </div>
+      <div class="feature">
+        <div class="icon">⌨️</div>
+        <div class="name">键盘导航</div>
+        <div class="desc">↑↓ 选择标签，Enter 跳转，全程不碰鼠标</div>
+      </div>
+      <div class="feature">
+        <div class="icon">📂</div>
+        <div class="name">域名自动分组</div>
+        <div class="desc">自动按域名归类，一键关闭整组标签</div>
+      </div>
+      <div class="feature">
+        <div class="icon">🔄</div>
+        <div class="name">智能排序</div>
+        <div class="desc">最近活跃 / 字母顺序一键切换，偏好自动跨设备同步</div>
+      </div>
+      <div class="feature">
+        <div class="icon">❌</div>
+        <div class="name">快速关闭</div>
+        <div class="desc">悬停点击关闭按钮，鼠标中键秒关标签</div>
+      </div>
+      <div class="feature">
+        <div class="icon">📎</div>
+        <div class="name">复制 URL</div>
+        <div class="desc">一键复制任意标签的链接到剪贴板</div>
+      </div>
+      <div class="feature">
+        <div class="icon">🔒</div>
+        <div class="name">隐私安全</div>
+        <div class="desc">纯本地运行，不收集任何数据，不发起网络请求</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Steps -->
+  <div class="section" style="background:#f8f9fa; border-top:1px solid #e8eaed; border-bottom:1px solid #e8eaed;">
+    <div class="section-title">
+      <span class="num">2</span>
+      安装步骤（手动加载，审核通过前使用）
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">获取压缩包</div>
+          <div class="step-desc">找作者获取 <code>tab-copilot-x.x.x-chrome.zip</code> 文件</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">解压文件</div>
+          <div class="step-desc">解压 zip 到一个文件夹（如：桌面 → <code>tab-copilot</code>）</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">打开扩展管理页</div>
+          <div class="step-desc">在 Chrome 地址栏输入 <code>chrome://extensions</code> 并回车</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">开启开发者模式</div>
+          <div class="step-desc">打开页面右上角的 <strong>「开发者模式」</strong> 开关</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-content">
+          <div class="step-title">加载扩展</div>
+          <div class="step-desc">点击 <strong>「加载已解压的扩展程序」</strong>，选中第 2 步解压的文件夹</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">6</div>
+        <div class="step-content">
+          <div class="step-title">固定到状态栏</div>
+          <div class="step-desc">在 Chrome 工具栏点击 <strong>拼图图标</strong>（扩展程序）→ 找到 Tab Copilot → 点击 <strong>📌 固定</strong>，图标常驻工具栏</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">7</div>
+        <div class="step-content">
+          <div class="step-title">开始使用</div>
+          <div class="step-desc">点击 Chrome 工具栏的 Tab Copilot 图标即可打开弹窗</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tips">
+      <div class="tip-title">温馨提示</div>
+      <ul>
+        <li>手动加载的扩展不会自动更新，商店审核通过后建议去 Chrome Web Store 安装正式版</li>
+        <li>卸载只需在 <code>chrome://extensions</code> 点击「移除」即可</li>
+        <li>遇到问题请在 GitHub Issues 反馈：<code>github.com/wellstang/tab-copilot-archive/issues</code></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Tab Copilot · 开源代码 <a href="https://github.com/wellstang/tab-copilot-archive" target="_blank" style="color:#1a73e8;text-decoration:none;">github.com/wellstang/tab-copilot-archive</a>
+  </div>
+
+</div>
+</body>
+</html>
