@@ -42,6 +42,36 @@
     opacity: 0.85;
   }
 
+  /* Download button */
+  .download-area {
+    text-align: center;
+    padding: 24px 48px 8px;
+  }
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #34a853;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(52,168,83,0.3);
+  }
+  .download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(52,168,83,0.4);
+  }
+  .download-btn .icon { font-size: 28px; }
+  .download-hint {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #5f6368;
+  }
+
   /* Step section */
   .section {
     padding: 36px 48px;
@@ -196,6 +226,15 @@
     <div class="subtitle">标签管理与快速切换 · 一秒找到你需要的标签</div>
   </div>
 
+  <!-- Download -->
+  <div class="download-area">
+    <a class="download-btn" href="https://github.com/wellstang/blog/raw/master/tab-copilot/tab-copilot-1.0.0-chrome.zip">
+      <span class="icon">⬇️</span>
+      下载 Tab Copilot
+    </a>
+    <div class="download-hint">点击即可下载 .zip 安装包 · 仅 77 KB</div>
+  </div>
+
   <!-- Features -->
   <div class="section">
     <div class="section-title">
@@ -256,8 +295,8 @@
       <div class="step">
         <div class="step-num">1</div>
         <div class="step-content">
-          <div class="step-title">获取压缩包</div>
-          <div class="step-desc">找作者获取 <code>tab-copilot-x.x.x-chrome.zip</code> 文件</div>
+          <div class="step-title">下载压缩包</div>
+          <div class="step-desc">点击上方 <strong>「下载 Tab Copilot」</strong> 按钮，下载 <code>tab-copilot-x.x.x-chrome.zip</code> 文件</div>
         </div>
       </div>
       <div class="step">
